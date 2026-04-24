@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.spring.linuxmate.dto.DiskDTO;
 import com.spring.linuxmate.dto.ProcessDTO;
 import com.spring.linuxmate.dto.ServiceDTO;
+import com.spring.linuxmate.dto.SystemStatsDTO;
 import com.spring.linuxmate.service.SystemService;
 
 @RestController
@@ -22,7 +23,7 @@ public class SystemController {
 	SystemService systemService;
 	
 	@GetMapping("/stats")
-	public Map<String, String> getStats() {
+	public SystemStatsDTO getStats() {
 	    return systemService.getStats();
 	}
 	
@@ -45,5 +46,14 @@ public class SystemController {
 	public List<String> getLogs() {
 	    return systemService.getLogs();
 	}
-
+	
+	@GetMapping("/alerts")
+	public Map<String, String> getAlerts() {
+	    return systemService.getAlerts();
+	}
+	
+	@GetMapping("/users")
+	public List<String> getUsers() {
+	    return systemService.getUsers();
+	}
 }
