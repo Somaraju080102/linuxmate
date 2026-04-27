@@ -43,7 +43,7 @@ public class SshService {
 	
 
 	    public String executeCommand(String command) {
-	        String host = "192.168.0.110"; 
+	        String host = "192.168.0.108"; 
 	        String user = "linuxmate";
 	        String password = "abc12def";
 
